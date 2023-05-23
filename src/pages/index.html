@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Przykład jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <h1 id="example">Witaj, świecie!</h1>
+
+  <ul id="list">
+    <li>Element 1</li>
+    <li>Element 2</li>
+    <li>Element 3</li>
+  </ul>
+
+  <script>
+    // Wykonywane po załadowaniu strony
+    $(document).ready(function() {
+      
+      // Zmiana tekstu elementu
+      $('#example').text('Witaj, OpenAI!');
+      
+      // Dodanie klasy do elementów listy
+      $('#list li').addClass('highlight');
+      
+      // Obsługa zdarzenia kliknięcia elementów listy
+      $('#list li').click(function() {
+        $(this).toggleClass('selected');
+      });
+      
+    });
+  </script>
+
+  <style>
+    .highlight {
+      font-weight: bold;
+    }
+    .selected {
+      background-color: yellow;
+    }
+  </style>
+
+</body>
+</html>
