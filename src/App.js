@@ -4,6 +4,8 @@ import Content from './Content';
 import './styles/App.css';
 
 function App() {
+
+
   return (
     <Router>
   <div className="wrap">

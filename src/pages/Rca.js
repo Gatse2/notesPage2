@@ -1,7 +1,12 @@
 import { useState } from 'react';
-import { rcaExampleCode, rcaExampleCode2, exampleCodeUseEffect, exampleCodeUseEffect2 } from './pageContent/rcaContent'; 
+import { rcaExampleCode, rcaExampleCode2, exampleCodeUseEffect, exampleCodeUseEffect2, exampleUseContext, exampleUseContext2, exampleUseContext3, exampleUseContext4, exampleUseContext5, exampleUseContext6, exampleUseReducer, exampleUseReducer2, exampleUseCallback, exampleUseCallback2, exampleUseMemo, exampleUseMemo2, exampleUseRef, exampleUseRef2 } from './pageContent/rcaContent'; 
+// import { useContext } from 'react';
+// import { AppContext } from '../AppContext';
 
 const Rca = () => {
+    // const { consoleApp, consoleName, name  } = useContext(AppContext)
+    // const { consoleApp, defaultData} = useContext(AppContext);
+
 
     const [activeIndex, setActiveIndex ] = useState([]);
     // const [activeIndex1, setActiveIndex1 ] = useState([]);
@@ -61,8 +66,12 @@ const Rca = () => {
     //         })
     //     );
     // };
-    
+        // const konsola = () => {
+        //     defaultData.consoleName()
+        //     // console.log(defaultData.name)
 
+        // }
+    
     return(
         
         <div className="rcaPPage">
@@ -70,6 +79,7 @@ const Rca = () => {
             <h1 className='titleSite'>ReactCreateApp</h1> 
             <div className='mainDescription'>Create React App to narzędzie stworzone przez Facebook, które pozwala na szybkie utworzenie nowego projektu React z gotową strukturą plików, skonfigurowanymi narzędziami deweloperskimi oraz automatyczną budową projektu. Dzięki temu deweloperzy nie muszą konfigurować nowych projektów od zera, co pozwala zaoszczędzić czas i zwiększyć produktywność. Create React App zapewnia również automatyczną transpilację kodu JavaScript przy użyciu Babel oraz umożliwia użycie preprocesorów CSS, takich jak Sass czy Less.</div>
             <div className="endLine"></div>
+
             </header>
 
             <section className='section'>
@@ -136,6 +146,21 @@ const Rca = () => {
                             {activeIndex.includes(4) ? <p className='chapterNameActive'>useContext</p> : <p className='chapterName'>useContext</p>}
                         </div>
                         <div className={`showHiddenDiv ${activeIndex.includes(4) ? "showDiv" : "hiddenDiv"}`}>
+                            <p> Hook useContext to jeden z hooków, które udostępnia React do zarządzania stanem i dzielenia informacji między komponentami. Pozwala on na korzystanie z kontekstu, który jest mechanizmem przekazywania danych w dół drzewa komponentów bez potrzeby przekazywania propsów przez wszystkie pośrednie komponenty.</p>
+                            <p> 1. Tworzymy plik AppContext.js jeśli chcemy dane przechowywać w osobnym pliku, jeśli nie to od razu importujem i tworzymy createContext w głównym pliku </p>
+                            <pre className='descriptionCode'>{exampleUseContext}</pre>
+                            <p> 2.W głównym pliku (komponencie rodzicu) importujemy kontekst i tworzymy Provider: do providera przekazujemy dane zaimportowane z głownego pliku lub dodajemy z pliku gdzie tworzymy provider</p>
+                            <pre className='descriptionCode'>{exampleUseContext2}</pre>
+                            <p> tworzymy provider nazwaNaszwgoPliku.Provider oraz podajemy warości jakie mają być dodane</p>
+                            <p>3. Używanie useContext w komponencie podrzędnym (Button.js):</p>
+                            <pre className='descriptionCode'>{exampleUseContext3}</pre>
+                            <h2>Inny sposób użycia use Context</h2>
+                            <p> 1. tworzymy plik AppContex.js</p>
+                            <pre className='descriptionCode'>{exampleUseContext4}</pre>
+                            <p>2. do plikgu głównego (rodzica) importujemy nasz plikach</p>
+                            <pre className='descriptionCode'>{exampleUseContext5}</pre>
+                            <p>3. już można kożystać ze zmiennej globalnie, aby to zrobić należy użyć useContext przykłąd (użycia w innym komponencie (pliku))</p>
+                            <pre className='descriptionCode'>{exampleUseContext6}</pre>
                             <div className="endLine"></div>
                         </div>                        
                     </section>
@@ -144,6 +169,23 @@ const Rca = () => {
                             {activeIndex.includes(5) ? <p className='chapterNameActive'>useReducer </p> : <p className='chapterName'>useReducer</p>}
                         </div>
                         <div className={`showHiddenDiv ${activeIndex.includes(5) ? "showDiv" : "hiddenDiv"}`}>
+                            <p>useReducer jest jednym z hooków dostępnych w bibliotece React. Pozwala na zarządzanie stanem komponentu za pomocą mechanizmu reducera, który jest funkcją określającą, jak stan komponentu powinien ewoluować w odpowiedzi na akcje.</p>
+                            <p>Podstawowa składnia useReducer wygląda następująco:</p>
+                            <pre className='descriptionCode'>{exampleUseReducer}</pre>
+                            <ul className='listUl'>
+                                <li>state to aktualny stan komponentu.</li>
+                                <li>dispatch to funkcja, która służy do wywoływania akcji.</li>
+                                <li>reducer to funkcja, która określa, jakie zmiany powinny zostać wprowadzone w stanie w zależności od akcji.</li>
+                                <li>initialState to początkowy stan komponentu.</li>
+                            </ul>
+                            <p>Reducer jest funkcją, która przyjmuje aktualny stan i akcję, a następnie zwraca nowy stan w zależności od akcji. Reducer powinien być czystą funkcją, która nie powoduje efektów ubocznych i zawsze zwraca nowy stan, a nie modyfikuje istniejącego stanu.</p>
+                            <p>Przykład użycia useReducer może wyglądać tak:</p>
+                            <pre className='descriptionCode'>{exampleUseReducer2}</pre>
+                            <p>W powyższym przykładzie useReducer jest używany do zarządzania licznikiem (count). Reducer określa, jak zmienia się stan w odpowiedzi na akcje typu 'increment' i 'decrement'. W komponencie Counter dostępne są funkcje increment i decrement, które wywołują odpowiednie akcje za pomocą funkcji dispatch.</p>
+                            <p>useReducer jest przydatnym narzędziem, gdy potrzebujesz bardziej zaawansowanego zarządzania stanem w komponencie i chcesz zastosować wzorzec reducera do aktualizacji stanu.</p>
+
+
+
                             <div className="endLine"></div>
                         </div>                        
                     </section>
@@ -152,6 +194,21 @@ const Rca = () => {
                             {activeIndex.includes(6) ? <p className='chapterNameActive'>useCallback</p> : <p className='chapterName'>useCallback</p>}
                         </div>
                         <div className={`showHiddenDiv ${activeIndex.includes(6) ? "showDiv" : "hiddenDiv"}`}>
+                            <p>useCallback to hook w bibliotece React, który służy do optymalizacji wydajności komponentów funkcyjnych poprzez pamiętanie i ponowne wykorzystywanie tych samych funkcji.</p>
+                            <p>Kiedy używasz funkcji jako propsa w komponencie, każde jej wywołanie powoduje ponowne renderowanie komponentu, nawet jeśli sama funkcja nie zmienia się. Może to prowadzić do niepotrzebnych renderowań i wywołań funkcji w przypadku, gdy wartość propsa nie uległa zmianie.</p>
+                            <p>useCallback rozwiązuje ten problem, zapewniając, że funkcja jest zapamiętana i zwracana jako referencja, tylko gdy jej zależności uległy zmianie.</p>
+                            <p>Sygnatura useCallback jest następująca:</p>
+                            <pre className='descriptionCode'>{exampleUseCallback}</pre>
+                            <ul className='listUl'>
+                                <li>callback - funkcja, którą chcemy zapamiętać i ponownie wykorzystać.</li>
+                                <li>dependencies - drugi argument, który określa zależności, które powodują ponowne wywołanie funkcji. Jest to tablica wartości, które muszą ulec zmianie, aby useCallback utworzył nową funkcję..</li>
+                            </ul>
+                            <p>useCallback zwraca zapamiętaną funkcję, którą możemy przekazywać do innych komponentów lub używać w hookach, takich jak useEffect.</p>
+                            <p>Przykład użycia useCallback:</p>
+                            <pre className='descriptionCode'>{exampleUseCallback2}</pre>
+                            <p>W tym przykładzie handleClick jest funkcją, która zwiększa wartość licznika o 1 za każdym razem, gdy przycisk zostanie kliknięty. Dzięki użyciu useCallback z pustą tablicą zależności ([]), funkcja handleClick będzie zapamiętana i ponownie wykorzystana w komponencie, nawet jeśli inne wartości się zmieniają.</p>
+                            <p>Dzięki użyciu useCallback, unikamy niepotrzebnego tworzenia nowych funkcji przy każdym renderowaniu komponentu, co przyczynia się do poprawy wydajności aplikacji. Należy jednak pamiętać, że useCallback jest stosowane wtedy, gdy faktycznie występuje potrzeba optymalizacji wydajności, a nie jest to zawsze konieczne we wszystkich przypadkach użycia funkcji w komponentach.</p>
+                       
                             <div className="endLine"></div>
                         </div>                        
                     </section>
@@ -160,6 +217,14 @@ const Rca = () => {
                             {activeIndex.includes(7) ? <p className='chapterNameActive'>useMemo</p> : <p className='chapterName'>useMemo</p>}
                         </div>
                         <div className={`showHiddenDiv ${activeIndex.includes(7) ? "showDiv" : "hiddenDiv"}`}>
+                            <p>useMemo to hook w bibliotece React, który pozwala na optymalizację wydajności renderowania komponentów poprzez pamiętanie obliczonych wartości pomiędzy renderowaniami. Jest szczególnie przydatny w przypadkach, gdy obliczenia są kosztowne lub kiedy chcemy uniknąć zbędnych obliczeń w każdym renderowaniu.</p>
+                            <p>Głównym celem użycia useMemo jest zapewnienie, że obliczenia będą wykonywane tylko wtedy, gdy zależności przekazane jako drugi argument do useMemo się zmienią. W przypadku, gdy zależności nie ulegają zmianie, useMemo zwraca wynik z pamięci podręcznej bez konieczności ponownego wyliczania go.</p>
+                            <p>Przykład, który lepiej obrazuje działanie useMemo: najpierw plik nadrzędny z ktróego wywołujemy komponent który wymaga obliczeń</p>
+                            <pre className='descriptionCode'>{exampleUseMemo2}</pre>
+                            <p>W komponencie dziecku używamy useMemo</p>
+                            <pre className='descriptionCode'>{exampleUseMemo}</pre>
+                            <p>W powyższym przykładzie mamy komponent ExpensiveComponent, który wykonuje kosztowne obliczenia na podstawie wartości przekazanej jako value. Wykorzystując useMemo, możemy zapobiec ponownemu obliczaniu expensiveResult za każdym razem, gdy komponent jest renderowany. useMemo zależy od value, więc jeśli value nie ulega zmianie, to wartość expensiveResult zostanie pobrana z pamięci podręcznej, co przyczynia się do poprawy wydajności.</p>
+                            <p>Podsumowując, useMemo jest przydatnym narzędziem do optymalizacji renderowania w React, szczególnie w przypadku kosztownych obliczeń. Pozwala na unikanie zbędnych obliczeń, ponieważ wynik jest przechowywany i pobierany z pamięci podręcznej, jeśli zależności nie ulegają zmianie.</p>
                             <div className="endLine"></div>
                         </div>                        
                     </section>
@@ -168,6 +233,17 @@ const Rca = () => {
                             {activeIndex.includes(8) ? <p className='chapterNameActive'>useRef</p> : <p className='chapterName'>useRef</p>}
                         </div>
                         <div className={`showHiddenDiv ${activeIndex.includes(8) ? "showDiv" : "hiddenDiv"}`}>
+                            <p>useRef to hook w bibliotece React, który pozwala na tworzenie referencji do elementów w drzewie DOM lub przechowywanie dowolnych wartości wewnątrz komponentu, które mogą być łatwo aktualizowane bez wywoływania ponownego renderowania.</p>
+                            <p>Głównym zastosowaniem useRef jest uzyskanie dostępu do elementów DOM, takich jak pola tekstowe, przyciski, formularze itp., które znajdują się w drzewie komponentów React. Może być również używany do przechowywania dowolnych wartości, które nie powodują ponownego renderowania komponentu.</p>
+                            <p>Przykład 1: Uzyskiwanie dostępu do elementu DOM:</p>
+                            <pre className='descriptionCode'>{exampleUseRef}</pre>
+                            <p>W tym przykładzie, useRef jest używany do utworzenia referencji do pola tekstowego. Następnie, za pomocą useEffect, ustawiamy fokus na tym polu po renderowaniu komponentu. Dzięki użyciu useRef, możemy uzyskać dostęp do elementu DOM (w tym przypadku pola tekstowego) i manipulować nim.</p>
+                            <pre className='descriptionCode'>{exampleUseRef2}</pre>
+                            <p>W tym przykładzie, useRef jest używany do przechowywania poprzedniej wartości licznika count bez wywoływania ponownego renderowania komponentu. Przy użyciu useEffect, aktualizujemy referencję previousCountRef.current po każdej zmianie count. Następnie wyświetlamy poprzednią wartość licznika w interfejsie użytkownika.</p>
+                            <p>Podsumowując, useRef to hook w React, który pozwala na tworzenie referencji do elementów DOM lub przechowywanie wartości wewnątrz komponentu. Jest szczególnie przydatny w przypadkach, gdy potrzebujemy dostępu do elementów DOM lub gdy chcemy przechowywać wartości, które mogą być aktualizowane bez ponownego renderowania komponentu.</p>
+
+
+
                             <div className="endLine"></div>
                         </div>                        
                     </section>

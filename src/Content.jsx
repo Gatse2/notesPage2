@@ -7,6 +7,8 @@ import ReactPage from "./pages/ReactPage";
 import Rca from "./pages/Rca";
 import Links from "./pages/Links";
 import Vsc from "./pages/Vsc";
+import TestPage from "./pages/TestPage";
+import GitHub from "./pages/GitHub";
 
 
 const Content = () => {
@@ -21,6 +23,9 @@ const Content = () => {
             <Route element={<Rca/>} path="/reactCreatApp"/>
             <Route element={<Vsc/>} path="/visualStudioCode"/>
             <Route element={<Links/>} path="/links"/>
+            <Route element={<TestPage/>} path="/TestPage"/>
+            <Route element={<GitHub/>} path="/Github"/>
+
             <Route element={<Css/>} path="/*"/>
         </Routes>
         </>

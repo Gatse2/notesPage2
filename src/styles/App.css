@@ -222,3 +222,24 @@ letter-spacing: 2px;
     list-style: inside;
     font-size: 2rem;
  }
+
+ .testPage{
+    width: 100vw;
+    font-size: 3rem;
+    padding: 50px 50px;
+ }
+
+ .testButton{
+    font-size: 3rem;
+    margin: 20px;
+    width: 150px;
+    cursor: pointer;
+ }
+ .testButton:hover{
+    color: red;
+    background-color: orange;
+ } 
+ .testButton:active{
+    color: black;
+    background-color: orangered;
+ }
