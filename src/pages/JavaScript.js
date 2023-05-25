@@ -1,6 +1,6 @@
 import '../styles/JavaScript.css';
 import { JavascriptGlossary,functions, stringMethodsAndProperties, instructions, exampleJSCode, numberMethods, numberFunctions, arrayMethodsAndProperties, loops, domElements } from './pageContent/JavaScriptContent';
-import { useState, useEffect } from 'react';
+import { useState,  } from 'react';
 
 const JavaScript = () => {
 
@@ -79,10 +79,6 @@ const JavaScript = () => {
     const functionsMap = MapContent(functions, activeIndex7, setActiveIndex7);
     const instructionsMap = MapContent(instructions, activeIndex8, setActiveIndex8);
 
-
-useEffect(()=>{
-    console.log(`useEffect ${activeIndex2.length}`)
-}, [activeIndex2.length])
 
 
     return(
