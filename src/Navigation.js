@@ -11,6 +11,7 @@ const Navigation = () => {
             <li><NavLink to="react">React</NavLink></li>
             <li><NavLink to="reactCreatApp">ReactCreatApp</NavLink></li>
             <li><NavLink to="visualstudioCode">Visual Studio Code</NavLink></li>
+            <li><NavLink to="typescript">TpeScript</NavLink></li>
             <li><NavLink to="GitHub">Git / GitHub</NavLink></li>
             <li><NavLink to="links">Linki</NavLink></li>
             <li><NavLink to="testpage">Test Page</NavLink></li>

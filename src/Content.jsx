@@ -9,7 +9,7 @@ import Links from "./pages/Links";
 import Vsc from "./pages/Vsc";
 import TestPage from "./pages/TestPage";
 import GitHub from "./pages/GitHub";
-
+import TypeScript from "./pages/TypeScript";
 
 const Content = () => {
     return(
@@ -25,7 +25,7 @@ const Content = () => {
             <Route element={<Links/>} path="/links"/>
             <Route element={<TestPage/>} path="/TestPage"/>
             <Route element={<GitHub/>} path="/Github"/>
-
+            <Route element={<TypeScript/>} path="/typescript"/>
             <Route element={<Css/>} path="/*"/>
         </Routes>
         </>

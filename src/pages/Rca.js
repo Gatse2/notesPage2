@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { rcaExampleCode, rcaExampleCode2, exampleCodeUseEffect, exampleCodeUseEffect2, exampleUseContext, exampleUseContext2, exampleUseContext3, exampleUseContext4, exampleUseContext5, exampleUseContext6, exampleUseReducer, exampleUseReducer2, exampleUseCallback, exampleUseCallback2, exampleUseMemo, exampleUseMemo2, exampleUseRef, exampleUseRef2 } from './pageContent/rcaContent'; 
+import { rcaExampleCode, rcaExampleCode2, exampleCodeUseEffect, exampleCodeUseEffect2, exampleUseContext, exampleUseContext2, exampleUseContext3, exampleUseContext4, exampleUseContext5, exampleUseContext6, exampleUseReducer, exampleUseReducer2, exampleUseCallback, exampleUseCallback2, exampleUseMemo, exampleUseMemo2, exampleUseRef, exampleUseRef2, exampleCodeAxios } from './pageContent/rcaContent'; 
 // import { useContext } from 'react';
 // import { AppContext } from '../AppContext';
 
@@ -272,8 +272,80 @@ const Rca = () => {
                         </div>                        
                     </section>
                 </div>
+            </section>
+
+
+            <section className='section'>
+               
+               <div onClick={() => handleOnClick(12, activeIndex, setActiveIndex)}>
+                    {activeIndex.includes(12) ? <p className='chapterNameActive'>Asynchroniczne pobieranie danych</p> : <p className='chapterName'>Asynchroniczne pobieranie danych</p>  }
+                    {/* <div className='mainDescription'> </div> */}
+
+                </div>
+                <div className={`showHiddenDiv ${activeIndex.includes(12) ? "showDiv" : "hiddenDiv"}`}>
+                    <section>                    
+                        <div onClick={() => handleOnClick(13, activeIndex, setActiveIndex)}>
+                            {activeIndex.includes(13) ? <p className='chapterNameActive'>axios</p> : <p className='chapterName'>axios</p>}
+                            <div className={`showHiddenDiv ${activeIndex.includes(13) ? "showDiv" : "hiddenDiv"}`}>
+                                <p>Axios to biblioteka JavaScript, której głównym celem jest ułatwienie wykonywania żądań sieciowych (np. HTTP) w środowiskach przeglądarki lub Node.js. Działa zarówno w środowisku przeglądarki, jak i na serwerze, dlatego jest często używana w aplikacjach opartych na React, Vue.js, Angular i innych frameworkach.</p>
+                                <p> Aby używać biblioteki axios trzeba ją zainstalować </p>
+                                <pre className='descriptionCode'>{exampleCodeAxios}</pre>
+                                <ul className='listUl'>
+                                    <li>axios.get('https://jsonplaceholder.typicode.com/users') - Wysyłane jest zapytanie GET na adres URL 'https://jsonplaceholder.typicode.com/users'. Ten URL wskazuje na fikcyjne API typu JSON Placeholder, które zwraca przykładowe dane użytkowników.</li>
+                                    <li>.then(function (response) &#123; ... &#125;) - Jeśli zapytanie jest udane (zwraca status 200), kod w bloku .then jest wykonywany. Funkcja obsługi sukcesu przyjmuje parametr response, który reprezentuje odpowiedź z serwera.</li>
+                                    <li>.catch(function (error) &#123; ... &#125;) - Jeśli wystąpił błąd podczas wykonania zapytania, kod w bloku .catch jest wykonywany. Funkcja obsługi błędu przyjmuje parametr error, który zawiera informacje o błędzie.</li>
+                                    <li>.finally(function () &#123; ... &#125;) - Blok .finally zawiera kod, który jest zawsze wykonywany, niezależnie od wyniku zapytania. Może to obejmować czynności, które muszą zostać wykonane bez względu na to, czy zapytanie było udane czy nie.</li>
+                                    <li></li>
+                                </ul>
+                            <div className="endLine"></div>
+                            </div>
+                            
+                        </div>
+                    </section>
+                    <section>                    
+                        <div onClick={() => handleOnClick(14, activeIndex, setActiveIndex)}>
+                            {activeIndex.includes(14) ? <p className='chapterNameActive'>fetch</p> : <p className='chapterName'>fetch</p>}
+                            <div className={`showHiddenDiv ${activeIndex.includes(14) ? "showDiv" : "hiddenDiv"}`}>
+                                <p>Metoda fetch: Metoda fetch to wbudowana w JavaScript metoda służąca do wykonywania zapytań sieciowych. Jest często używana do pobierania danych z serwera w formacie JSON lub innych formatów. Metoda fetch zwraca obiekt Promise, który można obsłużyć przy użyciu .then() lub async/await.</p>
+                                
+                                <pre className='descriptionCode'>{exampleCodeAxios}</pre>
+                         
+                            <div className="endLine"></div>
+                            </div>
+                            
+                        </div>
+                    </section>
+                    <section>                    
+                        <div onClick={() => handleOnClick(15, activeIndex, setActiveIndex)}>
+                            {activeIndex.includes(15) ? <p className='chapterNameActive'>XMLHttpRequest</p> : <p className='chapterName'>XMLHttpRequest</p>}
+                            <div className={`showHiddenDiv ${activeIndex.includes(15) ? "showDiv" : "hiddenDiv"}`}>
+                                <p>Choć starsza i mniej popularna niż powyższe metody, XMLHttpRequest to wbudowany obiekt w przeglądarkach, który umożliwia asynchroniczne wykonywanie zapytań HTTP. Jest bardziej rozbudowany niż metoda fetch i wymaga więcej kodu, ale nadal jest używany w niektórych scenariuszach.</p>
+
+                                <pre className='descriptionCode'>{exampleCodeAxios}</pre>
+                      
+                            <div className="endLine"></div>
+                            </div>
+                            
+                        </div>
+                    </section>
+                    <section>                    
+                        <div onClick={() => handleOnClick(16, activeIndex, setActiveIndex)}>
+                            {activeIndex.includes(16) ? <p className='chapterNameActive'>AJAX</p> : <p className='chapterName'>AJAX</p>}
+                            <div className={`showHiddenDiv ${activeIndex.includes(16) ? "showDiv" : "hiddenDiv"}`}>
+                                <p>Biblioteka jQuery AJAX: W przypadku starszych projektów lub obszarów, gdzie jQuery jest wciąż używane, metoda AJAX z biblioteki jQuery jest popularnym sposobem na pobieranie danych asynchronicznie. Zapewnia prosty interfejs i obsługę wielu typów żądań.</p>
+
+                                <pre className='descriptionCode'>{exampleCodeAxios}</pre>
+                    
+                            <div className="endLine"></div>
+                            </div>
+                            
+                        </div>
+                    </section>
+                 
+                </div>
 
             </section>
+            
 
         </div>
     );

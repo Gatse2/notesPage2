@@ -379,4 +379,24 @@ const MyComponent = () => {
 
 export default MyComponent;
 
-`
+`;
+export const exampleCodeAxios = `import axios from 'axios' // importujemy biblioteke
+
+const [ data , setData ] = useState([]);
+
+const getApiData = () => { 
+    // Make a request for a user with a given ID
+    axios.get('https://jsonplaceholder.typicode.com/users')
+      .then(function (response) {
+          // handle success
+        setData(response.data)
+        console.log(response.data);
+      })
+      .catch(function (error) {
+         // handle error
+        console.log(error);
+      })
+      .finally(function () {
+          // always executed
+      });
+};`
