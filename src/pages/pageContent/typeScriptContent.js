@@ -64,3 +64,34 @@ export const exampleTypeScriptCode3 = `function greet(name: string, age?: number
   };
   
   export default Counter;`
+
+export const exampleTypeScriptCode8 =`interface Person {
+  name: string;
+  age: number;
+  greet(): void;
+}
+`
+export const exampleTypeScriptCode9 =`interface Employee extends Person {
+  employeeId: number;
+  hireDate: Date;
+}
+`
+export const exampleTypeScriptCode10 =`interface Manager extends Employee, CanManageProjects {
+  department: string;
+}
+`;
+export const exampleTypeScriptCode11 = `function identity<T>(value: T): T {
+  return value;
+}
+`
+export const exampleTypeScriptCode12 = `let result = identity<number>(10); // result ma typ number
+let value = identity<string>("Hello"); // value ma typ string
+`
+export const exampleTypeScriptCode13 = `interface Lengthwise {
+  length: number;
+}
+
+function printLength<T extends Lengthwise>(value: T): void {
+  console.log("Length:", value.length);
+}
+`

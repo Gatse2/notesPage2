@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { exampleTypeScriptCode1, exampleTypeScriptCode2, exampleTypeScriptCode3, exampleTypeScriptCode4, exampleTypeScriptCode5, exampleTypeScriptCode6, exampleTypeScriptCode7 } from './pageContent/typeScriptContent';
+import { exampleTypeScriptCode1, exampleTypeScriptCode2, exampleTypeScriptCode3, exampleTypeScriptCode4, exampleTypeScriptCode5, exampleTypeScriptCode6, exampleTypeScriptCode7, exampleTypeScriptCode8, exampleTypeScriptCode9, exampleTypeScriptCode10, exampleTypeScriptCode11, exampleTypeScriptCode12, exampleTypeScriptCode13 } from './pageContent/typeScriptContent';
 
 
  const TypeScript  = () => {
@@ -137,11 +137,25 @@ import { exampleTypeScriptCode1, exampleTypeScriptCode2, exampleTypeScriptCode3,
                     <div className="endLine"></div>
                 </div>
             </section>
-            {/* <section className='section'>
+            <section className='section'>
                <div onClick={() => handleOnClick(4, activeIndex, setActiveIndex)}>
                     {activeIndex.includes(4) ? <p className='chapterNameActive'>Definiowanie interfejsów i dziedziczenie:</p> : <p className='chapterName'>Definiowanie interfejsów i dziedziczenie:</p>  }
                 </div>
                  <div className={`showHiddenDiv ${activeIndex.includes(4) ? "showDiv" : "hiddenDiv"}`}>
+                    <p>Interfejsy w TypeScript służą do definiowania struktury danych, czyli określania, jakie właściwości i metody powinien zawierać obiekt. Interfejsy są jedynie informacją o tym, jak powinien wyglądać obiekt, a nie generują kod. Interfejsy są zazwyczaj nazywane w czasowniku, aby wskazywać na to, że opisują pewne zachowanie.</p>
+                    <pre className="descriptionCode">{exampleTypeScriptCode8}</pre>
+                    <p>W powyższym przykładzie definiujemy interfejs Person, który ma trzy właściwości: name (typu string), age (typu number) oraz metodę greet (typu void). Interfejs Person mówi nam, że obiekt powinien mieć te właściwości i metodę.</p>
+                    <p>Dziedziczenie interfejsów pozwala na tworzenie bardziej złożonych struktur danych poprzez rozszerzanie istniejących interfejsów o dodatkowe właściwości i metody. Dzięki dziedziczeniu można tworzyć hierarchię interfejsów, gdzie bardziej ogólny interfejs może być rozszerzony przez bardziej szczegółowe interfejsy.</p>
+                    <pre className="descriptionCode">{exampleTypeScriptCode9}</pre>
+                    <p>W tym przykładzie mamy interfejs Employee, który rozszerza interfejs Person. Oznacza to, że Employee dziedziczy wszystkie właściwości i metody z interfejsu Person oraz dodaje swoje własne właściwości: employeeId (typu number) i hireDate (typu Date). Dzięki dziedziczeniu interfejsu, obiekt typu Employee będzie spełniał wymagania zarówno interfejsu Person, jak i interfejsu Employee.</p>
+                    <p>Można również dziedziczyć interfejsy z wielu interfejsów, używając słowa kluczowego extends.</p>
+                    <pre className="descriptionCode">{exampleTypeScriptCode10}</pre>
+                    <p>W tym przypadku interfejs Manager dziedziczy zarówno po interfejsie Employee, jak i po innym interfejsie CanManageProjects, dodając swoje własne właściwości, takie jak department (typu string).</p>
+
+
+
+
+
          
                     <div className="endLine"></div>
                 </div>
@@ -151,11 +165,24 @@ import { exampleTypeScriptCode1, exampleTypeScriptCode2, exampleTypeScriptCode3,
                     {activeIndex.includes(5) ? <p className='chapterNameActive'>Używanie typów generycznych:</p> : <p className='chapterName'>Używanie typów generycznych:</p>  }
                 </div>
                  <div className={`showHiddenDiv ${activeIndex.includes(5) ? "showDiv" : "hiddenDiv"}`}>
+                    <p>Używanie typów generycznych to ważna funkcja w TypeScript, która umożliwia tworzenie elastycznych i wielokrotnego użytku konstrukcji danych i funkcji. Typy generyczne pozwalają na dynamiczne określanie typów, które będą używane w danym miejscu, co zapewnia większą elastyczność i bezpieczeństwo typów. Oto opis używania typów generycznych:</p>
+                    <p>Aby zadeklarować typ generyczny, używamy notacji T, gdzie T jest nazwą parametru typu. Możemy używać dowolnej nazwy jako parametru typu, ale konwencją jest używanie pojedynczej wielkiej litery, na przykład T, U, E itd.</p>
+                    <pre className="descriptionCode">{exampleTypeScriptCode11}</pre>
+                    <p>W powyższym przykładzie deklarujemy funkcję identity, która przyjmuje argument value typu T i zwraca wartość tego samego typu T. Parametr T jest typem generycznym, który zostanie ustalony przy wywoływaniu funkcji.</p>
+                    <p>Aby użyć typu generycznego, podajemy wartość typu przy wywoływaniu funkcji lub deklarowaniu typu zmiennej. Typ generyczny zostanie zastosowany do argumentów funkcji lub wartości przypisanej do zmiennej.</p>
+                    <pre className="descriptionCode">{exampleTypeScriptCode12}</pre>
+                    <p>W tym przykładzie wywołujemy funkcję identity z podaniem typu generycznego number i string. W wyniku otrzymujemy wartości o odpowiednich typach.</p>
+                    <p>Możemy również ograniczać typy generyczne, określając, jakie typy są dozwolone dla parametru generycznego. Możemy to zrobić za pomocą słowa kluczowego extends, które wskazuje na to, że parametr generyczny musi być pochodzący z określonego typu lub implementować określony interfejs.</p>
+                    <pre className="descriptionCode">{exampleTypeScriptCode13}</pre>
+                    <p>W tym przykładzie definiujemy interfejs Lengthwise, który ma jedną właściwość length typu number. Następnie deklarujemy funkcję printLength, która przyjmuje argument typu generycznego T, który musi rozszerzać interfejs Lengthwise. Dzięki temu mamy pewność, że wartość przekazana do funkcji printLength posi</p>
+
+
+
          
                     <div className="endLine"></div>
                 </div>
             </section>
-            <section className='section'>
+            {/* <section className='section'>
                <div onClick={() => handleOnClick(6, activeIndex, setActiveIndex)}>
                     {activeIndex.includes(6) ? <p className='chapterNameActive'>Typowanie funkcji zwrotnych (callbacks):</p> : <p className='chapterName'>Typowanie funkcji zwrotnych (callbacks):</p>  }
                 </div>

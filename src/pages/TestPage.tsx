@@ -11,6 +11,14 @@
 // let exampleString = '';
 
 
+// const calculate = () => {
+//   try {
+//     setResult(eval(result));      matmaaaaa
+//   } catch (error) {
+//     setResult('Błąd');
+//   }
+// };
+
 let age: number = 20;
 let name = false;
 let isStudent: boolean = true;
